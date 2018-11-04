@@ -1,0 +1,167 @@
+% LaTeX Beamer From Scratch
+%%
+% Andre Pereira andrespp at gmail dot com
+% 13/10/2009
+%
+% This document is based on the Beamer User Guide, available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf
+
+\documentclass{beamer}
+
+%%%Style setup
+%\usetheme{Madrid} 	% Very clean
+%\usetheme{Antibes}	% 3 top bars: section, subsection, subsubsection
+\usetheme{Frankfurt}	% 2 top bars: section, slide counter %%esse
+%\usetheme{Ilmenau}
+%\usetheme{Berlin}	% 2 top bars: section, slide counter
+%\usetheme{Warsaw}	% large top bar
+%\usetheme{Bergen} 	% left side bar (uhhg)
+%\usetheme{Rochester} 	% clean with large top bar
+%\usetheme{Darmstadt}
+%\usetheme{Boadilla}	% super clean
+%\usetheme{Copenhagen}
+%\usetheme{Dresden}	% 2 top bars
+%\usetheme{Malmoe}
+%\usetheme{Goettingen}	% clear right bar
+%\usetheme{Hannover}	% clear left bar
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}	% 3 top bars (slim)
+%\usetheme{Luebeck}
+%\usetheme{Marburg}	% bold right bar
+%\usetheme{PaloAlto}	% left / top bar
+%\usetheme{Singapore}	% clear top bar
+%\usetheme{Szeged}
+%\usetheme{default}	% totaly white background
+%\usetheme{Montpellier}
+
+%\usecolortheme{seahorse}	%diminui o contraste
+%\usecolortheme{rose}			%diminui o contraste
+%\usefonttheme[onlylarge]{structuresmallcapsserif}
+
+% Hide slide bullets on header
+\setbeamertemplate{headline}
+ {%
+  \begin{beamercolorbox}{section in head/foot}
+  \insertsectionnavigationhorizontal{\textwidth}{}{}
+  \end{beamercolorbox}%
+}
+
+
+%%%Package Setup
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc} 	%uso de acentos - linux
+%\usepackage[latin1]{inputenc} %uso de acentos - windows
+\usepackage{listings}
+\usepackage{subfig}
+
+%%%Document Setup
+\mode<presentation>
+\title{\textit{Scheduling of Domestic Shiftable Loads via Cuckoo Search
+Optimization Algorithm}}
+%\subtitle{Trabalho da Disciplina PPGEE0248 - Tópicos Especiais em Computação
+%Aplicada}
+%\author{André Augusto da Silva Pereira\\ andresp@las.ic.unicamp.br}
+\author{André Pereira \\
+	Daniel Victor \\
+        Junior Albuquerque \\
+        Sandio Maciel \\
+        Thiago Ferreira \\
+}
+%			\textbf{Professor:} Prof. Dr. Paulo Lício de Geus}
+
+\date{Novembro/2018}
+\institute{Universidade Federal do Pará \\
+Programa de Pós-Graduação em Engenharia Elétrica}
+
+%%%Document itself
+\begin{document}
+%	\def\newblock{\hskip .11em plus .33em minus .07em} %bibliography fix
+  \setbeamertemplate{footline}[frame number]
+  \pgfdeclareimage[height=0.95cm] {logo}{./Figures/ufpa}
+	\logo{\pgfuseimage{logo}}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h]
+  	\begin{center}
+      \includegraphics [scale=0.23]{./Figures/article}
+     % \caption {Estimativa de dispositivos conectados à Internet.}
+  		%\label{fig:arq-imuno}
+  	\end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Agenda}
+	\tableofcontents
+\end{frame}
+
+\section{Introdução}
+
+\frame{\tableofcontents[currentsection]}
+
+\include{intro}
+
+\section[Appliances]{Escalonamento e Gerenciamento de \textit{Appliances}
+Domésticos}
+\frame{\tableofcontents[currentsection]}
+\include{appliances}
+
+\section[Algoritmo]{Algoritmo Proposto}
+\frame{\tableofcontents[currentsection]}
+\include{cso}
+
+\section[Resultados]{Simulações e Resultados}
+\frame{\tableofcontents[currentsection]}
+\include{cso}
+
+\section{Conclusões}
+\frame{\tableofcontents[currentsection]}
+\include{conclusion}
+
+%\section{Referências}
+%\frame{\tableofcontents[currentsection]}
+
+\begin{frame}[allowframebreaks]{Referências}
+% \bibliography{../referencias}
+
+\begin{thebibliography}{10}
+		\bibitem{smartgrid-cso}[1]
+			"Scheduling of domestic shiftable loads via Cuckoo Search optimization
+      algorithm."
+      \newblock Cakmak, Recep, and Ismail H
+      \newblock Smart Grid Congress and Fair (ICSG), 2016 4th International
+      Istanbul. IEEE, 2016
+		%\bibitem{class}[2]
+		%	Author name
+		%	\newblock Title.
+		%	\newblock Conference, 2018.
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}{Dúvidas?}
+  \begin{figure}[h]
+  	\begin{center}
+      \includegraphics [scale=0.4]{./Figures/duvida}
+      %\caption {Modelagem Geral do Sistema Imuno.}
+  		%\label{fig:arq-imuno}
+  	\end{center}
+  \end{figure}
+\end{frame}
+
+%\begin{frame}
+%	\begin{block}{}
+%		\begin{center}
+%			\textbf{Obrigado pela aten\c{c}\~{a}o!}
+%		\end{center}
+%	\end{block}
+%	\begin{itemize}
+%  		\item andresp@lasca.ic.unicamp.br
+%  	\end{itemize}
+%	\vspace{2cm}
+%\end{frame}
+
+
+\end{document}
